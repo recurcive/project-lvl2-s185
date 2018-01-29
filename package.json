@@ -1,0 +1,37 @@
+{
+  "name": "DifferenceCalculator",
+  "version": "0.0.1",
+  "description": "GenDiff.Hexlet.Practise",
+  "main": "index.js",
+  "bin": {
+    "gendiff": "dist/bin/gendiff.js"
+  },
+  "scripts": {
+    "babel-node": "babel-node",
+    "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
+    "prepublishOnly": "npm run build",
+    "eslint": "eslint"
+  },
+  "author": "Dmitry",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/recurcive/project-lvl2-s185.git"
+  },
+  "devDependencies": {
+    "babel-cli": "*",
+    "babel-core": "*",
+    "babel-preset-env": "*",
+    "babel-preset-stage-0": "*",
+    "eslint": "*",
+    "eslint-config-airbnb-base": "*",
+    "eslint-plugin-import": "*",
+    "babel-eslint": "*"
+  },
+  "files": [
+    "dist"
+  ]
+}
