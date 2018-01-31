@@ -1,3 +1,4 @@
+import fs from 'fs';
 
 const has = (object, key) => Object.prototype.hasOwnProperty.call(object, key);
 
@@ -17,14 +18,15 @@ const generateText = (acc, value, beforeObj, afterObj) => {
   return `${acc}\n  ${value} : ${beforeValue}`;
 };
 
-const genDiff = (firstText, secondText) => {
-  const first = firstText;
-  const second = secondText;
+// export default function (pathToFile1, pathToFile2) {
+const genDiff = (pathToFile1, pathToFile2) => {
+  console.log('hegfuergy');
+  const first = JSON.parse(fs.readFileSync(pathToFile1));
+  const second = JSON.parse(fs.readFileSync(pathToFile2));
 
-  const keys = Array.from(new Set(Object.keys(first).concat(Object.keys(second))));
+  const keys = Object.keys({ ...first, ...second });
 
   return keys.reduce((acc, value) => generateText(acc, value, first, second), '');
 };
 
 export default genDiff;
-

@@ -17,7 +17,8 @@
   "license": "ISC",
   "dependencies": {
     "commander": "*",
-    "fs": "*"
+    "fs": "*",
+    "js-yaml": "*" 
   },
   "repository": {
     "type": "git",

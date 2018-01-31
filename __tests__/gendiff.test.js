@@ -1,4 +1,3 @@
-import fs from 'fs';
 import genDiff from '../src';
 
 
@@ -11,7 +10,5 @@ const wrightanswer = `
 
 
 test('genDiff', () => {
-  const first = JSON.parse(fs.readFileSync('__tests__/__fixtures__/before.json'));
-  const second = JSON.parse(fs.readFileSync('__tests__/__fixtures__/after.json'));
-  expect(genDiff(first, second)).toBe(wrightanswer);
+  expect(genDiff('__tests__/__fixtures__/before.json', '__tests__/__fixtures__/after.json')).toBe(wrightanswer);
 });
