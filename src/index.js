@@ -20,7 +20,6 @@ const generateText = (acc, value, beforeObj, afterObj) => {
 
 // export default function (pathToFile1, pathToFile2) {
 const genDiff = (pathToFile1, pathToFile2) => {
-  console.log('hegfuergy');
   const first = JSON.parse(fs.readFileSync(pathToFile1));
   const second = JSON.parse(fs.readFileSync(pathToFile2));
 
