@@ -18,7 +18,10 @@
   "dependencies": {
     "commander": "*",
     "fs": "*",
-    "js-yaml": "*" 
+    "js-yaml": "*",
+    "lodash": "*",
+    "hexlet-pairs": "*",
+    "hexlet-pairs-data": "*"
   },
   "repository": {
     "type": "git",
