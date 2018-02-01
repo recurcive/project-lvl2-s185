@@ -11,3 +11,7 @@ test('genDiff', () => {
 test('genDiff', () => {
   expect(genDiff('__tests__/__fixtures__/before.yaml', '__tests__/__fixtures__/after.yaml')).toBe(answer);
 });
+
+test('genDiff', () => {
+  expect(genDiff('__tests__/__fixtures__/before.ini', '__tests__/__fixtures__/after.ini')).toBe(answer);
+});

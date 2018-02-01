@@ -1,8 +1,14 @@
 import fs from 'fs';
 import yaml from 'js-yaml';
 import _ from 'lodash';
-// import getObject from './parser';
+import ini from 'ini';
 
+
+const parsers = {
+  json: JSON.parse,
+  yaml: yaml.safeLoad,
+  ini: ini.parse,
+};
 
 const generateText = (acc, value, beforeObj, afterObj) => {
   const beforeValue = beforeObj[value];
@@ -22,21 +28,10 @@ const generateText = (acc, value, beforeObj, afterObj) => {
 
 const getExtensionFile = pathToFile => pathToFile.split('.').pop();
 
-const getObject = (pathToFile) => {
-  const fileType = getExtensionFile(pathToFile);
-  switch (_.lowerCase(fileType)) {
-    case 'json':
-      return JSON.parse(fs.readFileSync(pathToFile));
-    case 'yaml':
-      return yaml.safeLoad(fs.readFileSync(pathToFile));
-    default:
-      return '';
-  }
-};
 
 const genDiff = (pathToFile1, pathToFile2) => {
-  const first = getObject(pathToFile1);
-  const second = getObject(pathToFile2);
+  const first = parsers[getExtensionFile(pathToFile1)](fs.readFileSync(pathToFile1, 'utf-8'));
+  const second = parsers[getExtensionFile(pathToFile2)](fs.readFileSync(pathToFile2, 'utf-8'));
 
   const keys = _.union(_.keys(first), _.keys(second));
 

@@ -19,6 +19,7 @@
     "commander": "*",
     "fs": "*",
     "js-yaml": "*",
+    "ini": "*",
     "lodash": "*",
     "hexlet-pairs": "*",
     "hexlet-pairs-data": "*"
