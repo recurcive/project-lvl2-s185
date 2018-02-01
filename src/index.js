@@ -28,10 +28,11 @@ const generateText = (acc, value, beforeObj, afterObj) => {
 
 const getExtensionFile = pathToFile => pathToFile.split('.').pop();
 
+const getData = pathToFile => fs.readFileSync(pathToFile, 'utf-8');
 
 const genDiff = (pathToFile1, pathToFile2) => {
-  const first = parsers[getExtensionFile(pathToFile1)](fs.readFileSync(pathToFile1, 'utf-8'));
-  const second = parsers[getExtensionFile(pathToFile2)](fs.readFileSync(pathToFile2, 'utf-8'));
+  const first = parsers[getExtensionFile(pathToFile1)](getData(pathToFile1));
+  const second = parsers[getExtensionFile(pathToFile2)](getData(pathToFile2));
 
   const keys = _.union(_.keys(first), _.keys(second));
 

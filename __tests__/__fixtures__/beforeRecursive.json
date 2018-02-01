@@ -1,0 +1,21 @@
+{
+  "common": {
+    "setting1": "Value 1",
+    "setting2": "200",
+    "setting3": true,
+    "setting6": {
+      "key": "value"
+    }
+  },
+  "group1": {
+    "baz": "bas",
+    "foo": "bar"
+  },
+  "group2": {
+    "abc": "12345"
+  }
+}
+
+/* const temp = parsers[getExtensionFile(pathToFile1)](fs.readFileSync('../__tests__/__fixtures__/beforeRecursive.json', 'utf-8'));
+
+ console.log(`recursive -> ${temp}`);*/
