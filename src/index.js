@@ -26,7 +26,7 @@ const generateText = (acc, value, beforeObj, afterObj) => {
   return `${acc}\n  ${value} : ${beforeValue}`;
 };
 
-const getExtensionFile = pathToFile => pathToFile.split('.').pop();
+const getExtensionFile = pathToFile => pathToFile.substr((pathToFile.lastIndexOf('.') + 1));
 
 const getData = pathToFile => fs.readFileSync(pathToFile, 'utf-8');
 
