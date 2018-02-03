@@ -13,3 +13,4 @@ program
   .parse(process.argv);
 
 if (!program.args.length) program.help();
+
