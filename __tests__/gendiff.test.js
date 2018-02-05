@@ -13,7 +13,7 @@ test('genDiff', () => {
 });
 
 test('genDiff', () => {
-  const answer = fs.readFileSync('__tests__/__fixtures__/wrightSimpleAnswer.txt', 'UTF8');
+  const answer = fs.readFileSync('__tests__/__fixtures__/wrightSimpleAnswerINI.txt', 'UTF8');
   expect(genDiff('__tests__/__fixtures__/before.ini', '__tests__/__fixtures__/after.ini')).toBe(answer);
 });
 
